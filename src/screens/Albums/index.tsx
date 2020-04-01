@@ -1,5 +1,5 @@
 import React from "react";
-import AlbumList from "../../components/album/AlbumList";
+import AlbumList from "components/album/AlbumList";
 
 function AlbumsScreen() {
   return (

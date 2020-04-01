@@ -3,7 +3,7 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import { Photo } from "store/modules/photo/types";
-import PhotoLightbox from "../PhotoLightbox";
+import PhotoLightbox from "components/photo/PhotoLightbox";
 
 interface Props {
   photos: Photo[];
