@@ -3,21 +3,27 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { useStyles } from "./styles";
+import { Link } from "react-router-dom";
+import { Album } from "store/modules/album/types";
 
 interface Props {
-  title: string;
+  album: Album;
 }
 
 function AlbumListCard(props: Props) {
-  const { title } = props;
+  const {
+    album: { title, id }
+  } = props;
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography>{title}</Typography>
-      </CardContent>
-    </Card>
+    <Link to={`/album/${id}`}>
+      <Card className={classes.root}>
+        <CardContent>
+          <Typography>{title}</Typography>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
 

@@ -26,9 +26,9 @@ function AlbumList() {
 
   return (
     <Grid container spacing={3}>
-      {albumList.data.map((item: Album) => (
+      {albumList.data.map((album: Album) => (
         <Grid item xs={12} sm={6} md={3}>
-          <AlbumListCard title={item.title} />
+          <AlbumListCard album={album} />
         </Grid>
       ))}
     </Grid>

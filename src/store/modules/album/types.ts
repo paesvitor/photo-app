@@ -1,3 +1,5 @@
+import { Photo } from "../photo/types";
+
 const entity = "Album";
 
 // Actions
@@ -6,6 +8,11 @@ export const AlbumTypes = {
     REQUEST: `@${entity}/list/REQUEST`,
     FAILURE: `@${entity}/list/FAILURE`,
     SUCCESS: `@${entity}/list/SUCCESS`
+  },
+  SHOW: {
+    REQUEST: `@${entity}/show/REQUEST`,
+    FAILURE: `@${entity}/show/FAILURE`,
+    SUCCESS: `@${entity}/show/SUCCESS`
   }
 };
 
@@ -15,9 +22,18 @@ export interface Album {
   title: string;
 }
 
-// State
+// States
 export interface AlbumListState {
   readonly data: Album[];
+  readonly loading: boolean;
+  readonly error: boolean;
+}
+
+export interface AlbumShowState {
+  readonly data: {
+    album: Album;
+    photos: Photo[];
+  };
   readonly loading: boolean;
   readonly error: boolean;
 }
@@ -25,4 +41,5 @@ export interface AlbumListState {
 // Root State
 export interface AlbumRootState {
   list: AlbumListState;
+  show: AlbumShowState;
 }

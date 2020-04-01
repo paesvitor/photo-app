@@ -13,6 +13,18 @@ function* list() {
   }
 }
 
+function* show(action: any) {
+  try {
+    const album = yield call(api.get, `/albums/${action.payload}`);
+    const photos = yield call(api.get, `/albums/${action.payload}/photos`);
+
+    yield put(albumActions.show.success(photos.data, album.data));
+  } catch (error) {
+    yield put(albumActions.list.failure());
+  }
+}
+
 export default function* root() {
   yield takeLatest(AlbumTypes.LIST.REQUEST, list);
+  yield takeLatest(AlbumTypes.SHOW.REQUEST, show);
 }
