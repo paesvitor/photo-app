@@ -17,10 +17,10 @@ function AlbumListCard(props: Props) {
   const classes = useStyles();
 
   return (
-    <Link to={`/album/${id}`}>
+    <Link to={`/album/${id}`} className={classes.link}>
       <Card className={classes.root}>
         <CardContent>
-          <Typography>{title}</Typography>
+          <Typography align="center">{title}</Typography>
         </CardContent>
       </Card>
     </Link>
