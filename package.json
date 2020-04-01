@@ -1,5 +1,6 @@
 {
   "name": "photo-app",
+  "homepage": "https://paesvitor.github.io/photo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,11 +9,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^25.1.4",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.6",
-    "@types/redux-saga": "^0.10.5",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -58,6 +54,11 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "prettier": "^2.0.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.6",
+    "@types/redux-saga": "^0.10.5"
   }
 }

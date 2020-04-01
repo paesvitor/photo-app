@@ -1,9 +1,27 @@
-## Teste Técnico - Photo App
+# Teste técnico - Photo App
 
-Considerando a arquitetura básica utilizando React + (Mobx ou REDUX), criar uma app contemplando as 3 telas:
+Criado com o [create-react-app](https://github.com/facebook/create-react-app)
 
-![Draft](./draft.png)`
+## URL para acessar
 
-Consumir a seguinte api:
+https://paesvitor.github.io/photo-app
 
-https://jsonplaceholder.typicode.com/photos
+Deployado com o gh-pages
+
+## O Que eu usei
+
+- React 16.13.1
+- Typescript
+- Redux com Redux Saga e Redux Logger em desenvolvimento
+- Material UI
+- React Router DOM
+
+## Subindo em dev
+
+```
+yarn install
+```
+
+```
+yarn start
+```
