@@ -6,7 +6,7 @@ import AlbumScreen from "screens/Album";
 // Components
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={AlbumsScreen} />
         <Route exact path="/album/:id" component={AlbumScreen} />
