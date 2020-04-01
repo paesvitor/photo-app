@@ -27,7 +27,7 @@ function AlbumList() {
   return (
     <Grid container spacing={3}>
       {albumList.data.map((album: Album) => (
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={3} key={album.id}>
           <AlbumListCard album={album} />
         </Grid>
       ))}
