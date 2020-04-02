@@ -15,6 +15,7 @@ Deployado com o gh-pages
 - Redux com Redux Saga e Redux Logger em desenvolvimento
 - Material UI
 - React Router DOM
+- React testing library
 
 ## Subindo em dev
 
@@ -24,4 +25,10 @@ yarn install
 
 ```
 yarn start
+```
+
+## Rodando os testes
+
+```
+yarn test
 ```
