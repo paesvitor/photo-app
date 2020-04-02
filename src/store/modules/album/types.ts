@@ -1,19 +1,19 @@
-import { Photo } from "../photo/types";
+import {Photo} from '../photo/types';
 
-const entity = "Album";
+const entity = 'Album';
 
 // Actions
 export const AlbumTypes = {
   LIST: {
     REQUEST: `@${entity}/list/REQUEST`,
     FAILURE: `@${entity}/list/FAILURE`,
-    SUCCESS: `@${entity}/list/SUCCESS`
+    SUCCESS: `@${entity}/list/SUCCESS`,
   },
   SHOW: {
     REQUEST: `@${entity}/show/REQUEST`,
     FAILURE: `@${entity}/show/FAILURE`,
-    SUCCESS: `@${entity}/show/SUCCESS`
-  }
+    SUCCESS: `@${entity}/show/SUCCESS`,
+  },
 };
 
 // Data

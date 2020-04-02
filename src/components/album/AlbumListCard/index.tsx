@@ -1,10 +1,10 @@
-import React from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import { useStyles } from "./styles";
-import { Link } from "react-router-dom";
-import { Album } from "store/modules/album/types";
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
+import {Album} from 'store/modules/album/types';
+import {useStyles} from './styles';
 
 interface Props {
   album: Album;
@@ -12,7 +12,7 @@ interface Props {
 
 function AlbumListCard(props: Props) {
   const {
-    album: { title, id }
+    album: {title, id},
   } = props;
   const classes = useStyles();
 

@@ -1,6 +1,6 @@
-import React from "react";
-import AlbumList from "components/album/AlbumList";
-import { Typography, Box, Container } from "@material-ui/core";
+import React from 'react';
+import AlbumList from 'components/album/AlbumList';
+import {Typography, Box, Container} from '@material-ui/core';
 
 function AlbumsScreen() {
   return (

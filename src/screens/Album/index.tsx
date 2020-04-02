@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { albumActions } from "store/modules/album/actions";
-import PhotoList from "components/photo/PhotoList";
-import { ApplicationState } from "store";
-import { LinearProgress, Box, Typography, Container } from "@material-ui/core";
+import React, {useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {albumActions} from 'store/modules/album/actions';
+import PhotoList from 'components/photo/PhotoList';
+import {ApplicationState} from 'store';
+import {LinearProgress, Box, Typography, Container} from '@material-ui/core';
 
 interface RouteParams {
   id: string;
@@ -21,7 +21,7 @@ function AlbumScreen() {
 
   useEffect(() => {
     handleAlbumShowRequest();
-  }, []);
+  }, [handleAlbumShowRequest]);
 
   if (albumShow.loading) {
     return <LinearProgress />;

@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
+import {combineReducers} from 'redux';
 
-import album from "./modules/album/reducer";
+import album from './modules/album/reducer';
 
 export default combineReducers({
-  album
+  album,
 });

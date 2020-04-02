@@ -1,12 +1,12 @@
-import React from "react";
-import { unmountComponentAtNode } from "react-dom";
-import { render, act, fireEvent } from "@testing-library/react";
-import PhotoLightbox from "../index";
+import React from 'react';
+import {unmountComponentAtNode} from 'react-dom';
+import {render, fireEvent} from '@testing-library/react';
+import PhotoLightbox from '../index';
 
-describe("<PhotoLightbox/> unit test", () => {
+describe('<PhotoLightbox/> unit test', () => {
   let container = null;
   beforeEach(() => {
-    container = document.createElement("div");
+    container = document.createElement('div');
     document.body.appendChild(container);
   });
 
@@ -16,36 +16,32 @@ describe("<PhotoLightbox/> unit test", () => {
     container = null;
   });
 
-  it("Should render image correctly correctly if lightbox is open", () => {
-    const photoUrl = "https://via.placeholder.com/600/92c952";
-    const { getByTestId } = render(
+  it('Should render image correctly correctly if lightbox is open', () => {
+    const photoUrl = 'https://via.placeholder.com/600/92c952';
+    const {getByTestId} = render(
       <PhotoLightbox
         handleClose={() => jest.fn()}
-        isOpen={true}
+        isOpen
         photoUrl={photoUrl}
       />,
-      container
+      container,
     );
 
-    const image = getByTestId("image");
+    const image = getByTestId('image');
 
-    expect(image).toHaveAttribute("src", photoUrl);
+    expect(image).toHaveAttribute('src', photoUrl);
   });
 
-  it("Should call handleClose function when clicking close button", () => {
+  it('Should call handleClose function when clicking close button', () => {
     const handleClose = jest.fn();
-    const photoUrl = "https://via.placeholder.com/600/92c952";
+    const photoUrl = 'https://via.placeholder.com/600/92c952';
 
-    const { getByTestId } = render(
-      <PhotoLightbox
-        handleClose={handleClose}
-        isOpen={true}
-        photoUrl={photoUrl}
-      />,
-      container
+    const {getByTestId} = render(
+      <PhotoLightbox handleClose={handleClose} isOpen photoUrl={photoUrl} />,
+      container,
     );
 
-    fireEvent.click(getByTestId("close"));
+    fireEvent.click(getByTestId('close'));
 
     expect(handleClose).toHaveBeenCalledTimes(1);
   });

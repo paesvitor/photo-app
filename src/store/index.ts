@@ -1,9 +1,9 @@
-import { createStore, Store, compose, applyMiddleware } from "redux";
-import { AlbumRootState } from "./modules/album/types";
-import { createLogger } from "redux-logger";
-import createSagaMiddleware from "redux-saga";
-import rootReducer from "./rootReducer";
-import sagas from "./rootSagas";
+import {createStore, Store, compose, applyMiddleware} from 'redux';
+import {createLogger} from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
+import {AlbumRootState} from './modules/album/types';
+import rootReducer from './rootReducer';
+import sagas from './rootSagas';
 
 declare global {
   interface Window {

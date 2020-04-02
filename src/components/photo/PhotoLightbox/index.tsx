@@ -1,12 +1,7 @@
-import React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  Typography
-} from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
+import React from 'react';
+import {Dialog, DialogTitle} from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 interface Props {
   photoUrl: string;
@@ -15,7 +10,7 @@ interface Props {
 }
 
 function PhotoLightbox(props: Props) {
-  const { isOpen, photoUrl, handleClose } = props;
+  const {isOpen, photoUrl, handleClose} = props;
 
   return (
     <Dialog open={isOpen} onClose={handleClose}>
@@ -23,12 +18,11 @@ function PhotoLightbox(props: Props) {
         <IconButton
           data-testid="close"
           aria-label="close"
-          onClick={handleClose}
-        >
+          onClick={handleClose}>
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <img data-testid="image" src={photoUrl} title={photoUrl} />
+      <img data-testid="image" src={photoUrl} alt={photoUrl} />
     </Dialog>
   );
 }

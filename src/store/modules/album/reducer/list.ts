@@ -1,33 +1,33 @@
-import { AlbumListState, AlbumTypes } from "../types";
-import { Reducer } from "redux";
+import {Reducer} from 'redux';
+import {AlbumListState, AlbumTypes} from '../types';
 
 const INITIAL_STATE = {
   data: [],
   error: false,
-  loading: false
+  loading: false,
 };
 
 const reducer: Reducer<AlbumListState> = (
   state = INITIAL_STATE,
-  action: any
+  action: any,
 ) => {
   switch (action.type) {
     case AlbumTypes.LIST.REQUEST:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case AlbumTypes.LIST.FAILURE:
       return {
         ...state,
         error: true,
-        loading: false
+        loading: false,
       };
     case AlbumTypes.LIST.SUCCESS:
       return {
         ...state,
         loading: false,
-        data: action.payload
+        data: action.payload,
       };
 
     default:

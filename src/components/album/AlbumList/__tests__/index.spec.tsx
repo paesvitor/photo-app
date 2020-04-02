@@ -1,22 +1,18 @@
-import React from "react";
-import { unmountComponentAtNode } from "react-dom";
-import { render, act } from "@testing-library/react";
-import { useDispatch, Provider } from "react-redux";
-import AlbumList from "../index";
-import { Album } from "store/modules/album/types";
-import { renderWithProviders } from "utils/testing/renderWithProviders";
-import { renderHook } from "@testing-library/react-hooks";
-import { createStore } from "redux";
-import { albumActions } from "store/modules/album/actions";
-import { create } from "react-test-renderer";
-import reducer from "store/rootReducer";
-import { Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
+import React from 'react';
+import {unmountComponentAtNode} from 'react-dom';
+import {render, act} from '@testing-library/react';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import {albumActions} from 'store/modules/album/actions';
+import reducer from 'store/rootReducer';
+import {Router} from 'react-router-dom';
+import {createMemoryHistory} from 'history';
+import AlbumList from '../index';
 
-describe("<AlbumList/> unit test", () => {
+describe('<AlbumList/> unit test', () => {
   let container = null;
   beforeEach(() => {
-    container = document.createElement("div");
+    container = document.createElement('div');
     document.body.appendChild(container);
   });
 
@@ -25,7 +21,7 @@ describe("<AlbumList/> unit test", () => {
     container.remove();
     container = null;
   });
-  it("Should dispatch the correct action on render", () => {
+  it('Should dispatch the correct action on render', () => {
     const mockStore = createStore(reducer);
     mockStore.dispatch = jest.fn();
 
@@ -34,18 +30,18 @@ describe("<AlbumList/> unit test", () => {
         <Provider store={mockStore}>
           <AlbumList />
         </Provider>,
-        container
+        container,
       );
     });
 
     expect(mockStore.dispatch).toHaveBeenCalledWith(
-      albumActions.list.request()
+      albumActions.list.request(),
     );
   });
 
-  it("Should render the correct number of childrens using redux state", () => {
+  it('Should render the correct number of childrens using redux state', () => {
     const mockStore = createStore(reducer, {
-      album: { list: { data: [{ id: 1, title: "test" }] } }
+      album: {list: {data: [{id: 1, title: 'test'}]}},
     });
 
     const history = createMemoryHistory();
@@ -53,16 +49,16 @@ describe("<AlbumList/> unit test", () => {
     mockStore.dispatch = jest.fn();
 
     act(() => {
-      const { queryAllByTestId } = render(
+      const {queryAllByTestId} = render(
         <Provider store={mockStore}>
           <Router history={history}>
             <AlbumList />
           </Router>
         </Provider>,
-        container
+        container,
       );
 
-      const result = queryAllByTestId("album");
+      const result = queryAllByTestId('album');
 
       expect(result).toHaveLength(1);
     });

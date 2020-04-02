@@ -1,7 +1,7 @@
-import React from "react";
-import { Route, Switch, HashRouter } from "react-router-dom";
-import AlbumsScreen from "screens/Albums";
-import AlbumScreen from "screens/Album";
+import React from 'react';
+import {Route, Switch, HashRouter} from 'react-router-dom';
+import AlbumsScreen from 'screens/Albums';
+import AlbumScreen from 'screens/Album';
 
 // Components
 function Router() {
