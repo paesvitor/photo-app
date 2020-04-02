@@ -20,11 +20,15 @@ function PhotoLightbox(props: Props) {
   return (
     <Dialog open={isOpen} onClose={handleClose}>
       <DialogTitle id="customized-dialog-title">
-        <IconButton aria-label="close" onClick={handleClose}>
+        <IconButton
+          data-testid="close"
+          aria-label="close"
+          onClick={handleClose}
+        >
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <img src={photoUrl} title={photoUrl} />
+      <img data-testid="image" src={photoUrl} title={photoUrl} />
     </Dialog>
   );
 }
