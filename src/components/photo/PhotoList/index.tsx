@@ -32,8 +32,9 @@ function PhotoList(props: Props) {
       />
       <GridList cellHeight={300} cols={3}>
         {photos.map(photo => (
-          <GridListTile key={photo.id} cols={1}>
+          <GridListTile data-testid="photo-container" key={photo.id} cols={1}>
             <img
+              data-testid="photo"
               src={photo.url}
               alt={photo.title}
               onClick={() => handleSelectPhoto(photo.url)}

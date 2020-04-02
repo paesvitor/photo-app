@@ -19,7 +19,7 @@ function PhotoLightbox(props: Props) {
 
   return (
     <Dialog open={isOpen} onClose={handleClose}>
-      <DialogTitle id="customized-dialog-title">
+      <DialogTitle data-testid="photo-lightbox">
         <IconButton
           data-testid="close"
           aria-label="close"
